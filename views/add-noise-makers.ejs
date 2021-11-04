@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Display Cane Picture -->
+                <div class="col-6 vh-100">
+                    <div class="h-25 w-100" style="background-image: url('pankere.png');background-size:contain;">
+                    </div>
+                    <div class="h-25 w-100" style="background-image: url('pack.jpg');background-size:contain;">
+                    </div>
+                    <div class="h-25 w-100" style="background-image: url('mama.jpg');background-size:contain;">
+                    </div>
+                    <div class="h-25 w-100" style="background-image: url('shadow.jpg');background-size:contain;">
+                    </div>
+                </div>
+                <!-- Add Student Form -->
+                    <div class="col-6 py-4 shadow vh-100 text-info">
+                        <form action="/add-noise-makers" method="post">
+                            <h3 class="text-center">
+                                The Noise-Maker App
+                                <span style='font-size:100px;'>&#9997;</span>
+                            </h3>
+                            <input type="text" class="form-control my-2" placeholder="Enter the name of the noise-maker" name='name'>
+                            <input type="submit" class="btn btn-info w-100 my-4">
+                        </form>
+                    </div>
+                
+            </div>
+        </div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>

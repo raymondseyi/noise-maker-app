@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row ">
+                <!-- Display side Image -->
+                <div class="col-6" style="background-image: url('beating.jpg'); background-size:cover;">
+                    
+                </div>
+                <!-- List of Noise Makers -->
+                <div class="col-6 text-center shadow vh-100">
+                    <form action="">
+                    <h3 class="text-info">
+                        List of Noise Makers
+                        <span style='font-size:100px;'>&#9997;</span>
+                    </h3>
+                    <% if (noiseMakers.length==0){ %> 
+                        <h2 class="text-info">No student has made noise, you have really serious students in the class</h2>
+                    <% } %> 
+                    <div>
+                        <table border='1' class="table table-striped my-4">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>S/N</th>
+                                    <th>Name  &#128121;</th>
+                                    <th>X Times</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <% noiseMakers.forEach((noiseMaker,i) => { %>
+                                <tr>
+                                    <td><%= i+1 %> </td>
+                                    <td><%= noiseMaker.name %></td>
+                                    <td><%= noiseMaker.num %> </td>
+                                    <td>
+                                        <button type="submit" formaction="/increase/<%= i %>" class="btn btn-danger" formmethod="post">+</button>
+                                        <button type="submit"  class="btn btn-success" formmethod="post" formaction="/decrease/<%= i %> ">-</button>
+                                        <button type="submit"  class="btn btn-dark" formmethod="post" formaction="/delete/<%= i %> ">X</button>
+                                    </td>
+                                </tr>
+                                
+                             <% }) %>
+                             <tr>
+                                 <td colspan="4">
+                                     <button class="btn btn-info w-100 " type="submit" formmethod="get" formaction="/add-noise-makers">Add Noise Makers</button>
+                                 </td>
+                                
+                            </tr>
+                        </table>
+                    </div>
+                    </form>
+                    
+                    
+
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
